@@ -1,0 +1,38 @@
+assert.h
+
+stdarg.h
+	va_list		-> machine/stdarg.h
+
+stddef.h
+	size_t		-> sys/types.h
+	ptrdiff_t	-> sys/types.h
+			-> typedef _BSD_PTRDIFF_T_ ptrdiff.h
+	NULL		-> sys/null.h 
+
+stdlib.h
+	abs		-> sys/param.h -> libkern.h
+
+string.h
+	strlen		-> sys/param.h -> libkern.h
+	strcoll		-> sys/param.h -> libkern.h
+			-> #define strcoll strcmp
+	strncpy		-> sys/param.h -> libkern.h
+	strncat		-> // prototype (?)
+	strcspn		-> // prototype (?)
+
+limits.h
+	INT_MAX		-> machine/limits.h
+
+setjmp.h
+	setjmp		->
+
+math.h
+	pow		->
+
+ctype.h
+	isalnum		-> //isalpha | isdigit (?)
+	iscntrl		->
+
+locale.h
+	localeconv	-> NULL
+

@@ -1,0 +1,75 @@
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: -- Lunatik test init --
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: -- new case (C1) - "create new Lunatik state"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 enter function (F1) - "lunatikL_newstate"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 exit  function (F1) - [ return = 0, expected = 0]
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: -- close case (C1)	 - [ errors = 0, total = 0 ]
+Aug 17 07:56:46 TIEx1 /netbsd: 
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: -- new case (C2) - "run a simple script"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 enter function (F2) - "lunatik_runstring"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 exit  function (F2) - [ return = 0, expected = 0]
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 test result - [ result = "42", expected = "42"]
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 enter function (F3) - "lunatik_free"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 exit  function (F3) - [ return = 0, expected = 0]
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: -- close case (C2)	 - [ errors = 0, total = 0 ]
+Aug 17 07:56:46 TIEx1 /netbsd: 
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: -- new case (C3) - "syntax error"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 enter function (F4) - "lunatik_runstring"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 exit  function (F4) - [ return = 3, expected = 3]
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 enter function (F5) - "lunatik_free"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 exit  function (F5) - [ return = 0, expected = 0]
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: -- close case (C3)	 - [ errors = 0, total = 0 ]
+Aug 17 07:56:46 TIEx1 /netbsd: 
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: -- new case (C4) - "define the recursive fibonacci function"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 enter function (F6) - "lunatik_runstring"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 exit  function (F6) - [ return = 0, expected = 0]
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: -- close case (C4)	 - [ errors = 0, total = 0 ]
+Aug 17 07:56:46 TIEx1 /netbsd: 
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: -- new case (C5) - "call fib(3)"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 enter function (F7) - "lunatik_runstring"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 exit  function (F7) - [ return = 0, expected = 0]
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 test result - [ result = "2", expected = "2"]
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 enter function (F8) - "lunatik_free"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 exit  function (F8) - [ return = 0, expected = 0]
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: -- close case (C5)	 - [ errors = 0, total = 0 ]
+Aug 17 07:56:46 TIEx1 /netbsd: 
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: -- new case (C6) - "execution error"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 enter function (F9) - "lunatik_runstring"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 exit  function (F9) - [ return = 2, expected = 2]
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 enter function (F10) - "lunatik_free"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 exit  function (F10) - [ return = 0, expected = 0]
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: -- close case (C6)	 - [ errors = 0, total = 0 ]
+Aug 17 07:56:46 TIEx1 /netbsd: 
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: -- new case (C7) - "access Lua state directly"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 enter function (F11) - "lunatik_getluastate"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 exit  function (F11) - [ return = 0, expected = 0]
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 enter function (F12) - "lunatik_lock"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 exit  function (F12) - [ return = 0, expected = 0]
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 enter function (F13) - "luaL_loadstring || lua_pcall"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 exit  function (F13) - [ return = 0, expected = 0]
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 enter function (F14) - "lua_tostring"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 exit  function (F14) - [ return = 0, expected = 0]
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 test result - [ result = "5", expected = "5"]
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 enter function (F15) - "lunatik_unlock"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 exit  function (F15) - [ return = 0, expected = 0]
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: -- close case (C7)	 - [ errors = 0, total = 0 ]
+Aug 17 07:56:46 TIEx1 /netbsd: 
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: -- new case (C8) - "run a simple C function"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 enter function (F16) - "lunatik_runcfunction"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 exit  function (F16) - [ return = 0, expected = 0]
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 test result - [ result = "42", expected = "42"]
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 enter function (F17) - "lunatik_free"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 exit  function (F17) - [ return = 0, expected = 0]
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: -- close case (C8)	 - [ errors = 0, total = 0 ]
+Aug 17 07:56:46 TIEx1 /netbsd: 
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: -- new case (C9) - "run a C function with parms"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 enter function (F18) - "lunatik_runcfunction"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 exit  function (F18) - [ return = 0, expected = 0]
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: -- close case (C9)	 - [ errors = 0, total = 0 ]
+Aug 17 07:56:46 TIEx1 /netbsd: 
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: -- new case (C10) - "close Lunatik state"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 enter function (F19) - "lunatik_close"
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: --	 exit  function (F19) - [ return = 0, expected = 0]
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: -- close case (C10)	 - [ errors = 0, total = 0 ]
+Aug 17 07:56:46 TIEx1 /netbsd: 
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: -- [ total errors = 0, total cases = 10, total functions = 19 ]
+Aug 17 07:56:46 TIEx1 /netbsd: lktest: -- Lunatik test exit --

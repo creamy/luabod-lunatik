@@ -1,0 +1,93 @@
+lcode.c:8:20: error: no include path in which to search for stdlib.h
+In file included from lcode.c:13:
+lua.h:12:20: error: no include path in which to search for stdarg.h
+lua.h:13:20: error: no include path in which to search for stddef.h
+In file included from lua.h:16,
+                 from lcode.c:13:
+luaconf.h:11:20: error: no include path in which to search for limits.h
+luaconf.h:12:20: error: no include path in which to search for stddef.h
+luaconf.h:550:18: error: no include path in which to search for math.h
+In file included from lcode.c:13:
+lua.h:58: error: expected declaration specifiers or '...' before 'size_t'
+lua.h:60: error: expected declaration specifiers or '...' before 'size_t'
+lua.h:66: error: expected declaration specifiers or '...' before 'size_t'
+lua.h:66: error: expected declaration specifiers or '...' before 'size_t'
+lua.h:103: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'lua_Integer'
+cc1: warnings being treated as errors
+lua.h:147: warning: type defaults to 'int' in declaration of 'lua_Integer'
+lua.h:147: error: 'lua_Integer' declared as function returning a function
+lua.h:147: warning: parameter names (without types) in function declaration
+lua.h:149: error: expected declaration specifiers or '...' before 'size_t'
+lua.h:150: warning: type defaults to 'int' in declaration of 'size_t'
+lua.h:150: error: 'size_t' declared as function returning a function
+lua.h:150: warning: parameter names (without types) in function declaration
+lua.h:162: error: expected declaration specifiers or '...' before 'lua_Integer'
+lua.h:163: error: expected declaration specifiers or '...' before 'size_t'
+lua.h:166: error: expected declaration specifiers or '...' before 'va_list'
+lua.h:182: error: expected declaration specifiers or '...' before 'size_t'
+In file included from llex.h:10,
+                 from lcode.h:10,
+                 from lcode.c:15:
+lobject.h:12:20: error: no include path in which to search for stdarg.h
+In file included from lobject.h:15,
+                 from llex.h:10,
+                 from lcode.h:10,
+                 from lcode.c:15:
+llimits.h:11:20: error: no include path in which to search for limits.h
+llimits.h:12:20: error: no include path in which to search for stddef.h
+In file included from llex.h:10,
+                 from lcode.h:10,
+                 from lcode.c:15:
+lobject.h:205: error: expected specifier-qualifier-list before 'size_t'
+lobject.h:221: error: expected specifier-qualifier-list before 'size_t'
+lobject.h:375: error: expected declaration specifiers or '...' before 'va_list'
+lobject.h:377: error: expected declaration specifiers or '...' before 'size_t'
+In file included from lzio.h:13,
+                 from llex.h:11,
+                 from lcode.h:10,
+                 from lcode.c:15:
+lmem.h:11:20: error: no include path in which to search for stddef.h
+In file included from lzio.h:13,
+                 from llex.h:11,
+                 from lcode.h:10,
+                 from lcode.c:15:
+lmem.h:41: error: expected declaration specifiers or '...' before 'size_t'
+lmem.h:42: error: expected declaration specifiers or '...' before 'size_t'
+lmem.h:45: error: expected declaration specifiers or '...' before 'size_t'
+In file included from llex.h:11,
+                 from lcode.h:10,
+                 from lcode.c:15:
+lzio.h:26: error: expected specifier-qualifier-list before 'size_t'
+lzio.h:46: error: expected declaration specifiers or '...' before 'size_t'
+lzio.h:49: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'luaZ_read'
+lzio.h:57: error: expected specifier-qualifier-list before 'size_t'
+In file included from lcode.h:10,
+                 from lcode.c:15:
+llex.h:73: error: expected declaration specifiers or '...' before 'size_t'
+In file included from ldebug.h:11,
+                 from lcode.c:16:
+lstate.h:126: error: expected specifier-qualifier-list before 'ptrdiff_t'
+In file included from lcode.c:17:
+ldo.h:45: error: expected declaration specifiers or '...' before 'ptrdiff_t'
+ldo.h:45: error: expected declaration specifiers or '...' before 'ptrdiff_t'
+In file included from lcode.c:18:
+lgc.h:99: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'luaC_separateudata'
+lcode.c: In function 'luaK_jump':
+lcode.c:63: error: 'INT_MAX' undeclared (first use in this function)
+lcode.c:63: error: (Each undeclared identifier is reported only once
+lcode.c:63: error: for each function it appears in.)
+lcode.c: In function 'fixjump':
+lcode.c:84: warning: implicit declaration of function 'abs'
+lcode.c:84: error: 'INT_MAX' undeclared (first use in this function)
+lcode.c: In function 'getjump':
+lcode.c:101: error: 'INT_MAX' undeclared (first use in this function)
+lcode.c: In function 'addk':
+lcode.c:240: error: 'INT_MAX' undeclared (first use in this function)
+lcode.c:240: error: too many arguments to function 'luaM_growaux_'
+lcode.c: In function 'constfolding':
+lcode.c:649: warning: implicit declaration of function 'floor'
+lcode.c:650: warning: implicit declaration of function 'pow'
+lcode.c: In function 'luaK_code':
+lcode.c:801: error: 'INT_MAX' undeclared (first use in this function)
+lcode.c:801: error: too many arguments to function 'luaM_growaux_'
+lcode.c:805: error: too many arguments to function 'luaM_growaux_'

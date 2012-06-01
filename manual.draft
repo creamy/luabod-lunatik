@@ -1,0 +1,96 @@
+NAME
+	Lunatik -- framework for extending the kernel using Lua scripts
+
+SYNOPSIS
+
+#include <lua/lua.h>
+#include <sys/lunatik.h>
+
+lunatik_State *
+lunatik_newstate(lua_Alloc, void *, void *, lunatik_lock_t, lunatik_unlock_t);
+
+void
+lunatik_close(lunatik_State *);
+
+inline void
+lunatik_lock(lunatik_State *);
+
+inline void
+lunatik_unlock(lunatik_State *);
+
+inline void *
+lunatik_alloc(lunatik_State *, size_t);
+
+inline void
+lunatik_free(lunatik_State *, void *, size_t);
+
+inline lua_State *
+lunatik_getluastate(lunatik_State *);
+
+int 
+lunatik_runstring(lunatik_State *, const char *, char **, size_t *);
+
+int
+lunatik_runcfunction(lunatik_State *, lua_CFunction, void *, char **, size_t *);
+
+int
+lunatik_registerstate(lunatik_State *, const char *);
+
+#include <sys/kmem.h>
+#include <sys/mutex.h>
+
+lunatik_State *lunatikL_newstate(km_flag_t, kmutex_t *, kmutex_type_t);
+
+DESCRIPTION
+
+Lunatik is a framework to extend the kernel with Lua scripts.
+
+typedef void (*lunatik_lock_t)(void *);
+
+typedef void (*lunatik_unlock_t)(void *);
+
+typedef struct lunatik_State lunatik_State;
+
+
+FUNCTIONS
+
+- lunatik_newstate(allocf, ud, mutex, lockf, unlockf)
+
+Create a new instance of the Lua interpreter in-kernel. This instance is called Lunatik State and holds a Lua state descriptor, and the givens data structures and functions. Returns the new Lunatik state allocated by the allocf function. If there is no memory available it returns NULL.
+
+- lunatik_close(Lk)
+
+Close a given Lunatik state. The Lunatik state descriptor are freed using the registered allocf function. 
+
+- lunatik_lock(Lk)
+
+Lock a Lunatik state using the registered lock function.
+
+- lunatik_unlock(Lk)
+
+Unlock a Lunatik state using the registered unlock function.
+
+- lunatik_alloc(Lk, size)
+
+Allocate memory using the registered allocator function. If there is no memory available it returns NULL.
+
+- lunatik_free(Lk, ptr, size_t)
+
+Free memory using the registered allocator function.
+
+- lunatik_getluastate(Lk)
+
+Returns the Lua state encapsulated in the given Lunatik state.
+
+- lunatik_runstring(Lk, string, resultp, sizep)
+
+Run a string containing Lua code. Returns the execution result on resultp pointer if the pointer is not null. Returns the size of the result on sizep pointer if the pointer is not null. The result is allocated using the allocf registered function, so it must be freed using the lunatik_free call.
+
+- lunatik_runcfunction(Lk, cfunction, lightuserdata, resultp, sizep);
+
+Run a lua_CFuntion on the encapsulated Lua state. Returns the execution result on resultp pointer if the pointer is not null. Returns the size of the result on sizep pointer if the pointer is not null. The result is allocated using the allocf registered function, so it must be freed using the lunatik_free call. The lightuserdata argument is put in the Lua stack.
+
+- lunatikL_newstate(km_flags, kmutex, kmutex_type)
+
+Create a new Lunatik state using kmem allocator and a initialized given kmutex. The km_flags argument is given to kmem_alloc on each call. The kmutex_type argument determines the lock/unlock functions. Returns the new Lunatik state allocated by the kmem_alloc function. If there is no memory available it returns NULL.
+
